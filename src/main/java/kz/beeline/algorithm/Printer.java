@@ -29,8 +29,8 @@ public class Printer implements Runnable {
 
     private void print() {
         List<Integer> numerics = new ArrayList<>();
-        while (!stack.isEmpty()) {
-            synchronized (this) {
+        synchronized (this) {
+            while (!stack.isEmpty()) {
                 numerics.add(stack.pollLast());
             }
         }
